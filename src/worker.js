@@ -46,7 +46,7 @@ if (window.location.pathname !== "/") {
         {
           contentScriptQuery: "postData",
           data: JSON.stringify({ meetCode, userId: cgnzr_user_id }),
-          url: "http://cognizer.kavin.me/api/v1/join-meet",
+          url: "https://cognizer.kavin.me/api/v1/join-meet",
         },
         function (response) {
           if (response != undefined && response != "") {
