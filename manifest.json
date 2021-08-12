@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Cognizer",
+  "version": "0.1",
+  "description": "Cognizer helps you connect with people you see in Google Meet Conferences without having to search for them on the internet",
+  "browser_action": {
+    "default_popup": "src/popup.html",
+    "default_icon": "src/icons/128.png",
+    "icons": {
+      "16": "16.png",
+      "48": "48.png",
+      "128": "128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["src/worker.js"]
+    },
+    {
+      "matches": ["https://cognizer.kavin.me/dashboard"],
+      "js": ["src/getUserData.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "permissions": ["storage", "http://*/*", "https://*/*"]
+}
