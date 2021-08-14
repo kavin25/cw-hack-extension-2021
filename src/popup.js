@@ -16,7 +16,7 @@ chrome.storage.local.get(
         if (response != undefined && response != "") {
           for (guy of response.data) {
             document.getElementById("people").innerHTML += `
-              <div class="person">
+              <div class="person" id="${guy.id}">
                 <div class="left">
                   <img src="${guy.avatar_url}" alt="${guy.name} Avatar" width="40px" height="40px" />
                   <div class="left-content">
@@ -29,27 +29,37 @@ chrome.storage.local.get(
               </div>
             `;
             if (guy.phone) {
-              document.querySelector(".left-content").innerHTML += `
+              document.querySelector(
+                `div.person#${guy.id} > div.left-content`
+              ).innerHTML += `
                 <p class="phone">${guy.phone}</p>
               `;
             }
             if (guy.facebook) {
-              document.querySelector(".right").innerHTML += `
+              document.querySelector(
+                `div.person#${guy.id}> div.right`
+              ).innerHTML += `
                 <a href="${guy.facebook}" target="_blank"><i class="fab fa-lg fa-facebook"></i></a>
               `;
             }
             if (guy.linkedin) {
-              document.querySelector(".right").innerHTML += `
+              document.querySelector(
+                `div.person#${guy.id}> div.right`
+              ).innerHTML += `
                 <a href="${guy.linkedin}" target="_blank"><i class="fab fa-lg fa-linkedin"></i></a>
               `;
             }
             if (guy.twitter) {
-              document.querySelector(".right").innerHTML += `
+              document.querySelector(
+                `div.person#${guy.id}> div.right`
+              ).innerHTML += `
                 <a href="${guy.twitter}" target="_blank"><i class="fab fa-lg fa-twitter"></i></a>
               `;
             }
             if (guy.github) {
-              document.querySelector(".right").innerHTML += `
+              document.querySelector(
+                `div.person#${guy.id}> div.right`
+              ).innerHTML += `
                 <a href="${guy.github}" target="_blank"><i class="fab fa-lg fa-github"></i></a>
               `;
             }
