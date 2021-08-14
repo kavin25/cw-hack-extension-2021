@@ -1,6 +1,8 @@
 # Cognizer Chrome extension
 This chrome extension is a part of https://github.com/kavin25/cw-hack-app-2021 repository
 
+> NOTE: Register / Login to the app **after** installing the chrome extension for the extension to work without any problems
+
 ## Setup
 1. Clone this repository
 ```sh
